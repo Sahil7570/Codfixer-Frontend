@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+/* ===== App Container ===== */
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 70px;
+  background: #1f1f1f;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  gap: 20px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 100;
+}
+
+.sidebar h2 {
+  display: none;
+}
+
+.sidebar button {
+  background: #2a2a2a;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar button:hover {
+  background: linear-gradient(135deg, #6a5acd, #00bfff);
+  transform: scale(1.1);
+}
+
+/* ===== Editor Area ===== */
+.editor {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: auto;
+  background-color: #121212;
+}
+
+/* ===== Upload Zone ===== */
+.upload-zone {
+  border: 2px dashed #555;
+  border-radius: 12px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #1a1a1a;
+}
+
+.upload-zone:hover {
+  border-color: #00bfff;
+}
+
+.upload-zone p {
+  font-size: 18px;
+  color: #ccc;
+}
+
+/* ===== Preview Area ===== */
+.preview-area {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+}
+
+/* ===== Left Preview ===== */
+.preview-left {
+  flex: 3;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1e1e1e;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.preview-left img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* ===== Text Box ===== */
+.text-box {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border: 1px dashed #888;
+  padding: 5px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.text-box textarea {
+  width: 200px;
+  height: 50px;
+  background: transparent;
+  color: #fff;
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+.text-box-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.text-box-buttons button {
+  background: #2a2a2a;
+  border: none;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.text-box-buttons button:hover {
+  background: #00bfff;
+}
+
+.placed-text {
+  position: absolute;
+  cursor: move;
+  user-select: none;
+}
+
+/* ===== Right Panel ===== */
+.preview-right {
+  flex: 1;
+  border-radius: 12px;
+  background: #1e1e1e;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preview-right textarea {
+  width: 100%;
+  height: 100%;
+  background: #121212;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  resize: none;
+  padding: 8px;
+}
+
+/* ===== Inputs and Sliders ===== */
+input[type="range"], select {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 8px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 4px;
+}
+
+/* ===== Scrollbars ===== */
+.sidebar::-webkit-scrollbar, .preview-right::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb, .preview-right::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 3px;
+}
